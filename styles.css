@@ -43,6 +43,9 @@ ul {
   padding:0;
   margin:0 auto;
 }
+li {
+  padding: 2.5px 0;
+}
 
 .subsection {
   margin: 10px 0;
@@ -50,6 +53,15 @@ ul {
 
 .role.title {
   font-size: 1.5em;
+}
+.role.info {
+  font-style: italic;
+}
+.role.details, li.role.link {
+  padding-left: 5%;
+}
+.role.details ul {
+  padding-left: 5%;
 }
 
 .role, #contact-list span {
@@ -79,7 +91,7 @@ ul {
     height: 125px;
     display: flex;
     justify-content: space-between;
-    margin: 1% 2%;
+    margin: 1% 2% 0 2%;
   }
   #container {
     margin: 1% 10%;
@@ -138,6 +150,9 @@ ul {
   .row h1, .row h3 {
     margin: 2% 4%;
   }
+  .section h3 {
+    text-align: center;
+  }
   #experience, #experience h3 {
     margin-top: 0;
     padding-top: 0;
@@ -152,7 +167,7 @@ ul {
   }
   #contact-list {
     display: flex;
-    margin-bottom: 1%;
+    margin: 2% 0 4% 0;
   }
   #contact-list li {
     display: flex;
@@ -183,6 +198,7 @@ ul {
   #contact-list {
     height: 55px;
     width: 70%;
+    margin: 2% 0 4% 0;
   }
   #contact-list li {
     justify-content: flex-start;
@@ -214,9 +230,6 @@ ul {
     margin: 1% 2%;
     padding: 1vw 2vw;
   }
-  .role.title {
-    font-size: 1.5em;
-  }
   .role.info {
     color: #8b611f;
   }
@@ -244,7 +257,7 @@ ul {
     justify-content: space-around;
   }
   .column {
-    width: 48%;
+    width: 46%;
   }
   .web{
     display:none;
@@ -277,14 +290,13 @@ ul {
   #contact-list li a {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-left: 1%;
   }
   #contact-list li svg {
-    height: 100%;
     width: 7%;
   }
   #contact-list li span.print {
-    margin-left: 5px;
+    margin-left: 10px;
   }
   #spider-chart-container {
     width:100%;
