@@ -48,6 +48,10 @@ ul {
   margin: 10px 0;
 }
 
+.role.title {
+  font-size: 1.5em;
+}
+
 .role, #contact-list span {
   font-family: 'Electrolize', sans-serif;
 }
@@ -98,6 +102,12 @@ ul {
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+  }
+  #contact-list li a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
   }
   #contact-list li svg {
     height: 100%;
@@ -150,12 +160,32 @@ ul {
     align-items: center;
     justify-content: space-between;
   }
+  #contact-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
   #contact-list li svg, #contact-list li span.web {
     text-align: center;
     display: block;
   }
   #contact-list li svg {
     width: 50%;
+  }
+}
+
+/*Large Mobile/Small Desktop Styling*/
+@media screen and (min-width: 545px) and (max-width: 949px){
+  #contact-container {
+    align-items: center;
+  }
+  #contact-list {
+    height: 55px;
+    width: 70%;
+  }
+  #contact-list li {
+    justify-content: flex-start;
   }
 }
 
@@ -185,7 +215,7 @@ ul {
     padding: 1vw 2vw;
   }
   .role.title {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
   .role.info {
     color: #8b611f;
@@ -202,6 +232,9 @@ ul {
 
 /*Print styling*/
 @media print {
+  a {
+    text-decoration: none;
+  }
   h3 {
     border-bottom: 1px solid #3c8973;
   }
@@ -211,20 +244,25 @@ ul {
     justify-content: space-around;
   }
   .column {
-    width: 46%;
-    margin: 10px auto;
+    width: 48%;
+  }
+  .web{
+    display:none;
   }
   .column .section {
     margin-top: 1%;
-  }
-  #education h3 {
-    margin-top: 50px;
   }
   .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+  }
+  .section h3 {
+    font-size: 1em;
+  }
+  .row h3 {
+    margin-bottom: 10px;
   }
   .row h1, #contact-container {
     width: 46%;
@@ -236,21 +274,19 @@ ul {
     display: flex;
     flex-direction: column;
   }
-  #contact-list li {
+  #contact-list li a {
     display: flex;
+    align-items: center;
     margin-bottom: 5px;
   }
   #contact-list li svg {
     height: 100%;
-    width: 5%;
+    width: 7%;
   }
   #contact-list li span.print {
     margin-left: 5px;
   }
   #spider-chart-container {
     width:100%;
-  }
-  .web{
-    display:none;
   }
 }
