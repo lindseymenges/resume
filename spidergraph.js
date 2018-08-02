@@ -36,7 +36,6 @@ const svg = `
 <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="-15 0 125 100" id="spider-svg">
   <style>
     #spider-svg {
-      height: 75%;
       width: 100%;
     }
     .axis {

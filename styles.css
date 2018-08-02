@@ -3,11 +3,9 @@ TODO:
 - Print alignment
 - Print coloring
 - Attention to links
-- tab in subpoints of role details
 - Make print icon in bottom right corner which opens PDF in new tab
 - Create PDF by adjusting chrome print settings, save as PDF, save in directory
 - Create self avatar
-- Create 8 bit icons for each section (exp: sword, arcana: book, mp: wand w/ sparks, crafting: hammer, summon: alchemy circle?)
 */
 
 /*
@@ -30,7 +28,6 @@ tan:
 background-color: #f6e38c;
 container  background-color: #fffefc;
 container  border: 4px solid #a18d33;
-
 */
 
 body {
@@ -63,22 +60,16 @@ li {
 .role.details ul {
   padding-left: 5%;
 }
-
 .role, #contact-list span {
   font-family: 'Electrolize', sans-serif;
 }
 
 
 /*Desktop styling*/
-@media screen and (min-width:950px) {
+@media screen and (min-width:1030px) {
   h1 {
     padding-left: 2vw;
     width: 50%;
-  }
-  h3 {
-    border-bottom: 1px solid #3c8973;
-    margin: 3% auto;
-    padding-bottom: 5px;
   }
   .column-wrapper {
     display:flex;
@@ -93,12 +84,32 @@ li {
     justify-content: space-between;
     margin: 1% 2% 0 2%;
   }
+  .section-title {
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #013124;
+    margin-bottom: 10px;
+  }
+  .section-title .icon-container {
+    height: 32px;
+    width: 32px;
+  }
+  .section-title h3{
+    text-transform: uppercase;
+  }
+  .section-title .rpg-text {
+    font-size: .7em;
+    margin-left: 5px;
+  }
   #container {
     margin: 1% 10%;
   }
   #contact-container {
     width: 46%;
     height: 100%;
+    margin: 1% 2% 1% 5%;
   }
   #contact-list {
     height: 80%;
@@ -127,16 +138,28 @@ li {
   #contact-list li span.web {
     margin-left: 5px;
   }
-  #spider-chart-container {
-    width:100%;
-  }
   .print{
     display:none;
   }
 }
 
+/*Small Desktop/Tablet styling*/
+@media screen and (min-width: 630px) and (max-width: 1029px) {
+  #contact-list {
+    display: flex;
+    margin: 2% 15%;
+  }
+}
+
+@media screen and (max-width: 629px) {
+  #contact-list {
+    display: flex;
+    margin: 2%;
+  }
+}
+
 /*Mobile styling*/
-@media screen and (max-width: 949px) {
+@media screen and (max-width: 1029px) {
   .print{
     display:none;
   }
@@ -144,30 +167,46 @@ li {
     display: flex;
     flex-direction: column;
   }
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+  }
+  .section-title h3 {
+    text-transform: uppercase;
+  }
+  .section-title .rpg-text {
+    font-size: 0.75em;
+    text-transform: none;
+    margin-left: 10px;
+  }
+  .section-title .icon-container {
+    order: -1;
+    height: 50px;
+    width: 50px;
+  }
+  .row {
+    border-bottom: 4px solid #d1a35b;
+    padding: 10px;
+  }
   .row h1 {
     text-align: center;
   }
-  .row h1, .row h3 {
+  .row h1 {
     margin: 2% 4%;
   }
-  .section h3 {
-    text-align: center;
-  }
-  #experience, #experience h3 {
-    margin-top: 0;
-    padding-top: 0;
+  .section#experience {
+    margin-top: 5%;
   }
   #container {
     margin: 2%;
+    padding: 0;
   }
   #contact-container {
     display: flex;
     flex-direction: column;
     margin: 1% 0;
-  }
-  #contact-list {
-    display: flex;
-    margin: 2% 0 4% 0;
   }
   #contact-list li {
     display: flex;
@@ -185,23 +224,11 @@ li {
     text-align: center;
     display: block;
   }
+  #contact-list li span.web {
+    margin-top: 10px;
+  }
   #contact-list li svg {
     width: 50%;
-  }
-}
-
-/*Large Mobile/Small Desktop Styling*/
-@media screen and (min-width: 545px) and (max-width: 949px){
-  #contact-container {
-    align-items: center;
-  }
-  #contact-list {
-    height: 55px;
-    width: 70%;
-    margin: 2% 0 4% 0;
-  }
-  #contact-list li {
-    justify-content: flex-start;
   }
 }
 
@@ -212,9 +239,6 @@ li {
   }
   h1 {
     color: #013124;
-  }
-  h3 {
-    font-weight: bolder;
   }
   a {
     color: #84c7b4;
@@ -239,17 +263,23 @@ li {
   #container {
     border: 4px solid #d1a35b;
     background-color: #fffefc;
-    padding: 1%;
+  }
+  #spider-chart-container {
+    margin: 5% 0;
+    width:100%;
   }
 }
 
 /*Print styling*/
 @media print {
+.role.details, li.role.link {
+  padding-left: 5%;
+}
+.role.details ul {
+  padding-left: 5%;
+}
   a {
     text-decoration: none;
-  }
-  h3 {
-    border-bottom: 1px solid #3c8973;
   }
   .column-wrapper {
     display:flex;
@@ -271,11 +301,24 @@ li {
     align-items: center;
     justify-content: space-around;
   }
-  .section h3 {
-    font-size: 1em;
-  }
-  .row h3 {
+  .section-title {
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #013124;
     margin-bottom: 10px;
+  }
+  .section-title .icon-container {
+    height: 32px;
+    width: 32px;
+  }
+  .section-title h3{
+    text-transform: uppercase;
+  }
+  .section-title .rpg-text {
+    font-size: .7em;
+    margin-left: 5px;
   }
   .row h1, #contact-container {
     width: 46%;
@@ -299,6 +342,7 @@ li {
     margin-left: 10px;
   }
   #spider-chart-container {
+    margin: 5% 0;
     width:100%;
   }
 }
