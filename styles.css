@@ -43,27 +43,40 @@ ul {
 li {
   padding: 2.5px 0;
 }
+body {
+  color: #145b47;
+}
+h1 {
+  color: #013124;
+}
+a {
+  color: #84c7b4;
+  text-decoration: none;
+}
 
 .subsection {
   margin: 10px 0;
 }
-
 .role.title {
   font-size: 1.5em;
 }
 .role.info {
+  color: #8b611f;
   font-style: italic;
 }
-.role.details, li.role.link {
+.role.details {
+  color: #3c8973;
+}
+
+.role.details ul {
   padding-left: 5%;
 }
-.role.details ul {
+.role.details, li.role.link {
   padding-left: 5%;
 }
 .role, #contact-list span {
   font-family: 'Electrolize', sans-serif;
 }
-
 
 /*Desktop styling*/
 @media screen and (min-width:1030px) {
@@ -253,12 +266,6 @@ li {
   .column .section {
     margin: 1% 2%;
     padding: 1vw 2vw;
-  }
-  .role.info {
-    color: #8b611f;
-  }
-  .role.details {
-    color: #3c8973;
   }
   #container {
     border: 4px solid #d1a35b;
