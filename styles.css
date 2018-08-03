@@ -42,6 +42,9 @@ a {
   text-decoration: none;
 }
 
+.title-container {
+  display: flex;
+}
 .subsection {
   margin: 10px 0;
 }
@@ -62,9 +65,25 @@ a {
 
 /*Desktop styling*/
 @media screen and (min-width:1030px) {
+  #avatar-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  #avatar-container img {
+    height: 75px;
+    width: 75px;
+  }
   h1 {
-    padding-left: 2vw;
-    width: 50%;
+    margin: 0;
+    text-align: center;
+  }
+  .title-container, #contact-container {
+    width: 46%;
+  }
+  .title-container {
+    align-items: center;
+    justify-content: space-evenly;
   }
   .column-wrapper {
     display:flex;
@@ -77,13 +96,13 @@ a {
     height: 125px;
     display: flex;
     justify-content: space-between;
-    margin: 1% 2% 0 2%;
+    margin: 5% 2% 0 2%;
   }
   .section-title {
     display: flex;
     height: 35px;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     border-bottom: 1px solid #013124;
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -103,9 +122,9 @@ a {
     margin: 1% 10%;
   }
   #contact-container {
-    width: 46%;
     height: 100%;
-    margin: 1% 2% 1% 5%;
+    width: 43%;
+    margin-right: 2%;
   }
   #contact-list {
     height: 80%;
@@ -150,7 +169,7 @@ a {
 @media screen and (max-width: 629px) {
   #contact-list {
     display: flex;
-    margin: 2%;
+    margin: 1%;
   }
 }
 
@@ -158,6 +177,19 @@ a {
 @media screen and (max-width: 1029px) {
   .print{
     display:none;
+  }
+  .title-container {
+    flex-direction: column-reverse;
+  }
+  #avatar-container {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    margin: 2.5%;
+  }
+  #avatar-container img {
+    height: 100%;
+    width: 100%;
   }
   .column-wrapper {
     display: flex;
@@ -168,13 +200,12 @@ a {
     flex-direction: column;
     height: 100px;
     align-items: center;
-  }
-  .section-title h3 {
     text-transform: uppercase;
   }
-  .section-title .rpg-text {
+  .section-title h3 {
     font-size: 0.75em;
-    text-transform: none;
+  }
+  .section-title .rpg-text {
     margin-left: 10px;
   }
   .section-title .icon-container {
@@ -275,6 +306,29 @@ a {
 
 /*Print styling*/
 @media print {
+  .title-container, #contact-container {
+    width: 46%;
+  }
+  .title-container {
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #avatar-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  #avatar-container img {
+    height: 75px;
+    width: 75px;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+  }
+  body {
+    font-size: 12px;
+  }
   .print-container, .web{
     display:none;
   }
@@ -285,18 +339,10 @@ a {
     display:flex;
     align-items: flex-start;
     justify-content: space-around;
+    margin-top: 10px;
   }
   .column {
     width: 47%;
-  }
-  .role.title {
-    font-size: 1.25em;
-  }
-  .role.link.print {
-    font-weight: bold;
-  }
-  .column .section {
-    margin-top: 1%;
   }
   .row {
     display: flex;
@@ -308,25 +354,59 @@ a {
     align-items: baseline;
     border-bottom: 1px solid #013124;
     display: flex;
-    height: 20px;
+    height: 40px;
     justify-content: space-between;
     margin-bottom: 10px;
-    padding: 5px 0;
+    padding-bottom: 5px;
     text-transform: uppercase;
+  }
+  .role.title {
+    font-size: 1.25em;
+  }
+  .role.link.print {
+    font-weight: bold;
+  }
+  .column .section {
+    margin-top: 1%;
   }
   .section-title .icon-container {
     height: 19px;
     width: 19px;
   }
-  .section-title h3 {
-    line-height: 19px;
-    margin: 0;
+  .section-title {
+    font-size: 1.25em;
+    margin: 0 0 10px 0;
   }
   .section-title .rpg-text {
     margin-left: 5px;
   }
-  .row h1, #contact-container {
+  .row {
+    height: 150px;
+  }
+  .title-container, #contact-container {
     width: 47%;
+  }
+  .role.title, .role.info {
+    margin: 0;
+    padding: 0;
+  }
+  .role.info {
+    margin-top: 2px;
+  }
+  .role.link.print, .role.link.print a {
+    padding: 10px 0;
+    margin: 0;
+  }
+  .role.details, .role.details li {
+    margin: 0;
+    padding: 0;
+  }
+  #stats {
+    margin-top: 11px;
+  }
+  .subsection {
+    margin: 5px 0;
+    padding: 0;
   }
   #container {
     margin: 1%;
@@ -334,6 +414,13 @@ a {
   #contact-container {
     display: flex;
     flex-direction: column;
+  }
+  #contact-container .section-title {
+    margin-bottom: 5px;
+  }
+  #contact-list li {
+    padding: 1px 0;
+    margin: 0;
   }
   #contact-list li a {
     display: flex;
