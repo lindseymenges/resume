@@ -178,14 +178,18 @@ a {
   .print{
     display:none;
   }
+  .title-container, #contact-container {
+    padding: 10px;
+  }
   .title-container {
-    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid #d1a35b;
   }
   #avatar-container {
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     align-self: center;
-    margin: 2.5%;
   }
   #avatar-container img {
     height: 100%;
@@ -215,7 +219,6 @@ a {
   }
   .row {
     border-bottom: 4px solid #d1a35b;
-    padding: 10px;
   }
   .row h1 {
     text-align: center;
